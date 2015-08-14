@@ -2,14 +2,17 @@
 // Begin Pins
 // ########################################
 
+// Nokia 5110 screen pins
 #define PIN_SCLK 8
 #define PIN_SDIN 9
 #define PIN_DC 10
 #define PIN_RESET 12
 #define PIN_SCE 11
 
+// DS18B20 sensor pins
 #define PIN_DS_DATA 13
 
+// China digital encoder pins
 #define PIN_DT_A 4
 #define PIN_CLC_B 5
 #define PIN_SW_C 3
