@@ -26,6 +26,7 @@ int defineTemp = 0;
 
 #define MODE_HOT 0
 #define MODE_COLD 1
+#define DEVIATION 1 // deveation from define temperature
 
 int mode = MODE_HOT; // 0 - hot, 1 - cold
 bool enable = false;
@@ -360,11 +361,11 @@ void systemInit()
 void systemUpdate()
 {
 	enable = false;
-	if ((mode == MODE_HOT) && (defineTemp > sensorTemp))
+	if ((mode == MODE_HOT) && ((defineTemp - DEVIATION) > sensorTemp))
 	{
 		enable = true;
 	}
-	if ((mode == MODE_COLD) && (defineTemp < sensorTemp))
+	if ((mode == MODE_COLD) && ((defineTemp + DEVIATION) < sensorTemp))
 	{
 		enable = true;
 	}
