@@ -26,7 +26,7 @@ int defineTemp = 0;
 
 #define MODE_HOT 0
 #define MODE_COLD 1
-#define DEVIATION 1 // deveation from define temperature
+#define DEVIATION 1.0 // deveation from define temperature
 
 int mode = MODE_HOT; // 0 - hot, 1 - cold
 bool enable = false;
