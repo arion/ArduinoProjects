@@ -29,7 +29,6 @@ SoftwareSerial ESPserial(ESP_TX, ESP_RX);
 String LOCATION 	= "Togliatty,ru"; // id местоположения
 String DST_HOST 	= "api.openweathermap.org"; //api.openweathermap.org
 String DST_PORT 	= "80"; //api.openweathermap.org
-String DST_IP 		= "46.101.186.220"; //api.openweathermap.org
 String DST_API_KEY 	= "44db6a862fba0b067b1930da0d769e98"; //openweathermap APIKey
 int DST_GMT			= 4;
 
@@ -444,7 +443,7 @@ void loop()
     		}
     	}
     	
-    	if (dataUpdateTick >= 120) { // update data each 10 minutes
+    	if (dataUpdateTick >= 360) { // update data each 30 minutes
     		dataUpdateTick = 0;
     	}
   	}
@@ -533,6 +532,7 @@ boolean updateTimeAndWeather()
 		ESPserial.println("AT+CIPCLOSE");
 
 		Serial.println("Connection timeout");
+		terminal();
 		return false;
 	}
 	
